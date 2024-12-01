@@ -1,1 +1,2 @@
-# advent-of-code
+# Advent of Code
+Repo holds my submissions for AOC :)
