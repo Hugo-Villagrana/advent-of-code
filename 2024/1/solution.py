@@ -10,7 +10,7 @@
 # left and right locations will always be the same length
 
 
-def question1():
+def main():
     leftLocations = []
     rightLocations = []
     with open("input.txt") as f:
@@ -31,4 +31,4 @@ def question1():
     print(quantity)
 
 
-question1()
+main()
