@@ -1,7 +1,22 @@
-# Notes: Each line of input is a report, each number on line is a level.
-# The levels are either all increasing or all decreasing.
-# Any two adjacent levels differ by at least one and at most three.
+import re
 
 
 def solution2():
-    pass
+    with open("input.txt") as f:
+        total = 0
+        skip = False
+        for line in f:
+            matches = re.findall(r"don\'t\(\)|do\(\)|mul\([0-9]+,[0-9]+\)", line)
+            for match in matches:
+                print(match)
+                if match == "do()" or match == "don't()":
+                    skip = match == "don't()"
+                    continue
+
+                if not skip:
+                    [lhs, rhs] = re.findall("[0-9]+", str(match))
+                    total += int(lhs) * int(rhs)
+        return total
+
+
+print(solution2())
